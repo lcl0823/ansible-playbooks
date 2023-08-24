@@ -70,7 +70,7 @@
         image: "{{ http_container_image }}"
         state: started
         volumes:
-          - "/home/ubuntu/webcontainer/:/usr/local/apache2/htdocs/"
+          - /home/ubuntu/webcontainer/:/usr/local/apache2/htdocs/
         ports:
           - "808{{ item }}:80" 
-        with_sequence: "count={{ http_container_count }}"
+        with_sequence: count = "{{ http_container_count }}"
